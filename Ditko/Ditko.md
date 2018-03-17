@@ -66,7 +66,7 @@ UIColor *contrastColor = [colorFromHex KDI_contrastingColor];
 UIColor *brightColor = [randomRGB KDI_colorByAdjustingBrightnessByPercent:0.1];
 ```
 
-*UIImage+KDIExtensions.h* and *NSImage+KDIExtensions.h* provide methods to quickly switch between original and template images, and determine the dominant color of an image.
+*UIImage+KDIExtensions.h* and *NSImage+KDIExtensions.h* provide methods to quickly switch between original and template images, and determine the dominant color of an image. For example:
 
 ```objc
 // assume this exists
@@ -77,7 +77,7 @@ UIImage *templateImage = image.KDI_templateImage;
 UIColor *color = [image KDI_dominantColor];
 ```
 
-*UIBarButtonItem+KDIExtensions.h* provides methods to create some commonly used bar button items as well as attach blocks to bar button items instead of the normal target/action pattern.
+*UIBarButtonItem+KDIExtensions.h* provides methods to create some commonly used bar button items as well as attach blocks to bar button items instead of the normal target/action pattern. For example:
 
 ```objc
 // need Stanley for the weakify/strongify macros
@@ -93,6 +93,40 @@ UIBarButtonItem *addItem = [UIBarButtonItem KDI_barButtonSystemItem:UIBarButtonS
 // you can also set the block property on any created UIBarButtonItem, doing so will override its target/action
 addItem.KDI_block = ^(__kindof UIBarButtonItem *barButtonItem) {
 	strongify(self);
+	[self bar];
+};
+```
+
+*UIControl+KDIExtensions.h* and *NSControl+KDIExtensions.h* provide methods to attach blocks in addition to the normal target/action pattern. For example, on iOS:
+
+```objc
+// need Stanley for the weakify/strongify macros
+#import <Stanley/Stanley.h>
+
+// assume this exists, UIButton is a subclass of UIControl
+UIButton *button = ...;
+
+weakify(self);
+[button KDI_addBlock:^(__kindof UIControl *control, UIControlEvents controlEvents){
+	strongify(self);
+	// this block will be invoked whenever the specified control events take place
+	[self foo];
+} forControlEvents:UIControlEventTouchUpInside];
+```
+
+Similarly, on macOS:
+
+```objc
+// need Stanley for the weakify/strongify macros
+#import <Stanley/Stanley.h>
+
+// assume this exists, NSButton is a subclass of NSControl
+NSButton *button = ...;
+
+weakify(self);
+button.KDI_block = ^(__kindof NSControl *control) {
+	strongify(self);
+	// this block will be invoked whenever the control action is triggered
 	[self bar];
 };
 ```
