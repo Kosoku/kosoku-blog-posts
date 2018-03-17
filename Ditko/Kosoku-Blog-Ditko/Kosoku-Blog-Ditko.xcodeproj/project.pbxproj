@@ -1,0 +1,414 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		078CE98A205C9C1C001592BA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 078CE989205C9C1C001592BA /* AppDelegate.m */; };
+		078CE98D205C9C1C001592BA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 078CE98C205C9C1C001592BA /* ViewController.m */; };
+		078CE990205C9C1C001592BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 078CE98E205C9C1C001592BA /* Main.storyboard */; };
+		078CE992205C9C1C001592BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 078CE991205C9C1C001592BA /* Assets.xcassets */; };
+		078CE995205C9C1C001592BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 078CE993205C9C1C001592BA /* LaunchScreen.storyboard */; };
+		078CE998205C9C1C001592BA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 078CE997205C9C1C001592BA /* main.m */; };
+		3F96BE14431A6071472D5EC4 /* libPods-Kosoku-Blog-Ditko.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DFDEFD4DCCCC4962A7B3B4F /* libPods-Kosoku-Blog-Ditko.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		078CE985205C9C1C001592BA /* Kosoku-Blog-Ditko.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kosoku-Blog-Ditko.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		078CE988205C9C1C001592BA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		078CE989205C9C1C001592BA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		078CE98B205C9C1C001592BA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		078CE98C205C9C1C001592BA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		078CE98F205C9C1C001592BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		078CE991205C9C1C001592BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		078CE994205C9C1C001592BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		078CE996205C9C1C001592BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		078CE997205C9C1C001592BA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		31FF0E510B440F72C55BC8C5 /* Pods-Kosoku-Blog-Ditko.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kosoku-Blog-Ditko.release.xcconfig"; path = "Pods/Target Support Files/Pods-Kosoku-Blog-Ditko/Pods-Kosoku-Blog-Ditko.release.xcconfig"; sourceTree = "<group>"; };
+		3DFDEFD4DCCCC4962A7B3B4F /* libPods-Kosoku-Blog-Ditko.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Kosoku-Blog-Ditko.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5AA2C4B1E40BA2DF65B1A283 /* Pods-Kosoku-Blog-Ditko.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kosoku-Blog-Ditko.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Kosoku-Blog-Ditko/Pods-Kosoku-Blog-Ditko.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		078CE982205C9C1C001592BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F96BE14431A6071472D5EC4 /* libPods-Kosoku-Blog-Ditko.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		078CE97C205C9C1C001592BA = {
+			isa = PBXGroup;
+			children = (
+				078CE987205C9C1C001592BA /* Kosoku-Blog-Ditko */,
+				078CE986205C9C1C001592BA /* Products */,
+				A2A2626B258E61010CFB2D0E /* Pods */,
+				64AAEE2B5710197F864B3C51 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		078CE986205C9C1C001592BA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				078CE985205C9C1C001592BA /* Kosoku-Blog-Ditko.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		078CE987205C9C1C001592BA /* Kosoku-Blog-Ditko */ = {
+			isa = PBXGroup;
+			children = (
+				078CE988205C9C1C001592BA /* AppDelegate.h */,
+				078CE989205C9C1C001592BA /* AppDelegate.m */,
+				078CE98B205C9C1C001592BA /* ViewController.h */,
+				078CE98C205C9C1C001592BA /* ViewController.m */,
+				078CE98E205C9C1C001592BA /* Main.storyboard */,
+				078CE991205C9C1C001592BA /* Assets.xcassets */,
+				078CE993205C9C1C001592BA /* LaunchScreen.storyboard */,
+				078CE996205C9C1C001592BA /* Info.plist */,
+				078CE997205C9C1C001592BA /* main.m */,
+			);
+			path = "Kosoku-Blog-Ditko";
+			sourceTree = "<group>";
+		};
+		64AAEE2B5710197F864B3C51 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3DFDEFD4DCCCC4962A7B3B4F /* libPods-Kosoku-Blog-Ditko.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A2A2626B258E61010CFB2D0E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5AA2C4B1E40BA2DF65B1A283 /* Pods-Kosoku-Blog-Ditko.debug.xcconfig */,
+				31FF0E510B440F72C55BC8C5 /* Pods-Kosoku-Blog-Ditko.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		078CE984205C9C1C001592BA /* Kosoku-Blog-Ditko */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 078CE99B205C9C1C001592BA /* Build configuration list for PBXNativeTarget "Kosoku-Blog-Ditko" */;
+			buildPhases = (
+				AB92833BFFA20D0FE3A6ECA7 /* [CP] Check Pods Manifest.lock */,
+				078CE981205C9C1C001592BA /* Sources */,
+				078CE982205C9C1C001592BA /* Frameworks */,
+				078CE983205C9C1C001592BA /* Resources */,
+				58ED2EACC61B35C28436C773 /* [CP] Embed Pods Frameworks */,
+				58EB1F93747850EF0C4CA344 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Kosoku-Blog-Ditko";
+			productName = "Kosoku-Blog-Ditko";
+			productReference = 078CE985205C9C1C001592BA /* Kosoku-Blog-Ditko.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		078CE97D205C9C1C001592BA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Kosoku Interactive, LLC.";
+				TargetAttributes = {
+					078CE984205C9C1C001592BA = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 078CE980205C9C1C001592BA /* Build configuration list for PBXProject "Kosoku-Blog-Ditko" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 078CE97C205C9C1C001592BA;
+			productRefGroup = 078CE986205C9C1C001592BA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				078CE984205C9C1C001592BA /* Kosoku-Blog-Ditko */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		078CE983205C9C1C001592BA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				078CE995205C9C1C001592BA /* LaunchScreen.storyboard in Resources */,
+				078CE992205C9C1C001592BA /* Assets.xcassets in Resources */,
+				078CE990205C9C1C001592BA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		58EB1F93747850EF0C4CA344 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Kosoku-Blog-Ditko/Pods-Kosoku-Blog-Ditko-resources.sh",
+				"$PODS_CONFIGURATION_BUILD_DIR/Ditko/Ditko.bundle",
+				"$PODS_CONFIGURATION_BUILD_DIR/KSOFontAwesomeExtensions/KSOFontAwesomeExtensions.bundle",
+				"$PODS_CONFIGURATION_BUILD_DIR/Stanley/Stanley.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Kosoku-Blog-Ditko/Pods-Kosoku-Blog-Ditko-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		58ED2EACC61B35C28436C773 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Kosoku-Blog-Ditko/Pods-Kosoku-Blog-Ditko-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AB92833BFFA20D0FE3A6ECA7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Kosoku-Blog-Ditko-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		078CE981205C9C1C001592BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				078CE98D205C9C1C001592BA /* ViewController.m in Sources */,
+				078CE998205C9C1C001592BA /* main.m in Sources */,
+				078CE98A205C9C1C001592BA /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		078CE98E205C9C1C001592BA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				078CE98F205C9C1C001592BA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		078CE993205C9C1C001592BA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				078CE994205C9C1C001592BA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		078CE999205C9C1C001592BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		078CE99A205C9C1C001592BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		078CE99C205C9C1C001592BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5AA2C4B1E40BA2DF65B1A283 /* Pods-Kosoku-Blog-Ditko.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 74KPPW2K35;
+				INFOPLIST_FILE = "Kosoku-Blog-Ditko/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kosoku.Kosoku-Blog-Ditko";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		078CE99D205C9C1C001592BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 31FF0E510B440F72C55BC8C5 /* Pods-Kosoku-Blog-Ditko.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 74KPPW2K35;
+				INFOPLIST_FILE = "Kosoku-Blog-Ditko/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kosoku.Kosoku-Blog-Ditko";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		078CE980205C9C1C001592BA /* Build configuration list for PBXProject "Kosoku-Blog-Ditko" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				078CE999205C9C1C001592BA /* Debug */,
+				078CE99A205C9C1C001592BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		078CE99B205C9C1C001592BA /* Build configuration list for PBXNativeTarget "Kosoku-Blog-Ditko" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				078CE99C205C9C1C001592BA /* Debug */,
+				078CE99D205C9C1C001592BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 078CE97D205C9C1C001592BA /* Project object */;
+}

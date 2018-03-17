@@ -1,0 +1,9 @@
+source "https://github.com/CocoaPods/Specs.git"
+
+target "Kosoku-Blog-Ditko" do
+  platform :ios, "11.0"
+  
+  pod "Ditko"
+end
+
+workspace "Kosoku-Blog-Ditko"
