@@ -130,3 +130,37 @@ button.KDI_block = ^(__kindof NSControl *control) {
 	[self bar];
 };
 ```
+
+*UIGestureRecognizer+KDIExtensions.h* and *NSGestureRecognizer+KDIExtensions.h* provide methods to attach blocks in addition to the normal target/action pattern. For example, on iOS:
+
+```objc
+// need Stanley for the weakify/strongify macros
+#import <Stanley/Stanley.h>
+
+// assume this exists
+UITapGestureRecognizer *recognizer = ...;
+
+weakify(self);
+[recognizer KDI_addBlock:^(__kindof UIGestureRecognizer *gestureRecognizer){
+	strongify(self);
+	// this block is invoked each time the gesture recognizer state changes
+	[self foo];
+}];
+```
+
+Similarly, on macOS:
+
+```objc
+// need Stanley for the weakify/strongify macros
+#import <Stanley/Stanley.h>
+
+// assume this exists
+NSClickGestureRecognizer *recognizer = ...;
+
+weakify(self);
+recognizer.KDI_block = ^(__kindof NSGestureRecognizer *gestureRecognizer) {
+	strongify(self);
+	// this block is invoked each time the gesture recognizer state changes
+	[self bar];
+};
+```
