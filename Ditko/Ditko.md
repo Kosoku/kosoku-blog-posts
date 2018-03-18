@@ -164,3 +164,15 @@ recognizer.KDI_block = ^(__kindof NSGestureRecognizer *gestureRecognizer) {
 	[self bar];
 };
 ```
+
+*UINavigationController+KDIExtensions.h* provides methods to push and pop view controllers that take an optional completion block that will be invoked when the animation is finished. For example:
+
+```objc
+// assume this exists
+UIViewController *push = ...;
+
+[self.navigationController KDI_pushViewController:push animated:YES completion:^{
+	// this block is invoked when the push animation completes
+	[self foo];
+}];
+```
