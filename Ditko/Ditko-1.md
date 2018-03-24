@@ -2,7 +2,7 @@
 
 Welcome back for the next post in a series highlighting the various frameworks available on [Kosoku's GitHub](https://github.com/Kosoku).
 
-Next up is [Ditko](https://github.com/Kosoku/Ditko), a UI-centric framework available on iOS, tvOS, watchOS, and macOS. This post will cover some of the more useful facilities provided by the framework along with examples.
+Next up is [Ditko](https://github.com/Kosoku/Ditko), a UI-centric framework available on iOS, tvOS, watchOS, and macOS. Ditko is a much larger framework than [Stanley](https://github.com/Kosoku/Stanley), so covering Ditko will be split up into 2 posts. This post will cover the macros, functions, protocols, and categories available in the framework. Part 2 will cover the classes available in the framework. Let's get started!
 
 ## Macros
 
@@ -174,5 +174,68 @@ UIViewController *push = ...;
 [self.navigationController KDI_pushViewController:push animated:YES completion:^{
 	// this block is invoked when the push animation completes
 	[self foo];
+}];
+```
+
+*UIViewController+KDIExtensions.h* provides methods to determine the correct view controller for presentation, recursively dismiss all view controllers and present view controllers as a popover. For example:
+
+```objc
+// assume this exists
+UIViewController *present = ...;
+// assume self is a UIViewController
+[[self KDI_viewControllerForPresenting] presentViewController:present animated:YES completion:nil];
+
+```
+
+*UIAlertController+KDIExtensions.h* provides methods for easily presenting `UIAlertController` instances while providing an optional completion block. Sensible defaults are provided for all options. For example:
+
+```objc
+// assume this is an error from a networking call
+NSError *error = ...;
+
+// determines the correct view controller to present on and performs the presentation
+[UIAlertController KDI_presentAlertControllerWithError:error];
+```
+
+*UIFont+KDIDynamicTypeExtensions.h* provides methods that allow any control to easily support dynamic type. It also allows dynamic type support for custom fonts by allowing the client to provide its own method that supplies the fonts that should be used when dynamic type changes. For example:
+
+```objc
+// assume this exists, built in text classes already support the required KDIDynamicTypeObject protocol
+UILabel *label = ...;
+
+// one line is all it takes!
+label.KDI_dynamicTypeTextStyle = UIFontTextStyleBody;
+```
+
+Or in your custom class:
+
+```objc
+#import <Ditko/Ditko.h>
+
+// with this setup, setFont: will be called whenever there are dynamic changes
+// MyClass would then update its relevant text display with the new font
+@class MyClass : NSObject <KDIDynamicTypeObject>
+@property (strong,nonatomic) UIFont *font;
+@end
+
+@implementation MyClass
+- (SEL)dynamicTypeSetFontSelector {
+	return @selector(setFont:);
+}
+@end
+```
+
+*UIViewController+KDIUIImagePickerControllerExtensions.h* provides methods to present a `UIImagePickerController` instance in the appropriate manner as well supply a completion block that will be invoked when the user makes a selection or takes a photo/video. For example:
+
+```objc
+#import <Ditko/Ditko.h>
+
+// assume this exists
+UIImagePickerController *controller = ...;
+
+[[UIViewController KDI_viewControllerForPresenting] KDI_presentImagePickerController:controller barButtonItem:nil sourceView:nil sourceRect:CGRectZero permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES completion:^(NSDictionary<NSString *,id> * _Nullable info){
+	UIImage *image = info.KDI_image;
+
+	// do something with the image
 }];
 ```
