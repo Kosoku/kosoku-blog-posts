@@ -15,6 +15,7 @@
 
 #import "BorderedViewController.h"
 #import "Constants.h"
+#import "UIBarButtonItem+Extensions.h"
 
 #import <KSOFontAwesomeExtensions/KSOFontAwesomeExtensions.h>
 #import <Ditko/Ditko.h>
@@ -33,7 +34,9 @@
     if (!(self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]))
         return nil;
     
-    self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Bordered" image:[UIImage KSO_fontAwesomeSolidImageWithString:@"\uf069" size:kTabBarItemImageSize].KDI_templateImage selectedImage:nil];
+    self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Bordered" image:[UIImage KSO_fontAwesomeSolidImageWithString:@"\uf069" size:kBarButtonItemImageSize].KDI_templateImage selectedImage:nil];
+    
+    self.navigationItem.rightBarButtonItems = @[[UIBarButtonItem KSO_toggleWindowAccessoryBarButtonItem]];
     
     return self;
 }

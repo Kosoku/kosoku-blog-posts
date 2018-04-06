@@ -14,6 +14,8 @@
 		07D0F519207812B800EC38F0 /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D0F518207812B800EC38F0 /* TabBarController.m */; };
 		07D0F51C2078139600EC38F0 /* BorderedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D0F51B2078139600EC38F0 /* BorderedViewController.m */; };
 		07D0F51F2078141700EC38F0 /* BorderedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07D0F51D2078141700EC38F0 /* BorderedViewController.xib */; };
+		07D0F523207817B400EC38F0 /* WindowAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D0F522207817B400EC38F0 /* WindowAccessoryView.m */; };
+		07D0F5262078199800EC38F0 /* UIBarButtonItem+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D0F5252078199800EC38F0 /* UIBarButtonItem+Extensions.m */; };
 		3F96BE14431A6071472D5EC4 /* libPods-Kosoku-Blog-Ditko.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DFDEFD4DCCCC4962A7B3B4F /* libPods-Kosoku-Blog-Ditko.a */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +33,10 @@
 		07D0F51B2078139600EC38F0 /* BorderedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BorderedViewController.m; sourceTree = "<group>"; };
 		07D0F51E2078141700EC38F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/BorderedViewController.xib; sourceTree = "<group>"; };
 		07D0F5202078164400EC38F0 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		07D0F521207817B400EC38F0 /* WindowAccessoryView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WindowAccessoryView.h; sourceTree = "<group>"; };
+		07D0F522207817B400EC38F0 /* WindowAccessoryView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WindowAccessoryView.m; sourceTree = "<group>"; };
+		07D0F5242078199800EC38F0 /* UIBarButtonItem+Extensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Extensions.h"; sourceTree = "<group>"; };
+		07D0F5252078199800EC38F0 /* UIBarButtonItem+Extensions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Extensions.m"; sourceTree = "<group>"; };
 		31FF0E510B440F72C55BC8C5 /* Pods-Kosoku-Blog-Ditko.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kosoku-Blog-Ditko.release.xcconfig"; path = "Pods/Target Support Files/Pods-Kosoku-Blog-Ditko/Pods-Kosoku-Blog-Ditko.release.xcconfig"; sourceTree = "<group>"; };
 		3DFDEFD4DCCCC4962A7B3B4F /* libPods-Kosoku-Blog-Ditko.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Kosoku-Blog-Ditko.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AA2C4B1E40BA2DF65B1A283 /* Pods-Kosoku-Blog-Ditko.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kosoku-Blog-Ditko.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Kosoku-Blog-Ditko/Pods-Kosoku-Blog-Ditko.debug.xcconfig"; sourceTree = "<group>"; };
@@ -69,9 +75,13 @@
 		078CE987205C9C1C001592BA /* Kosoku-Blog-Ditko */ = {
 			isa = PBXGroup;
 			children = (
+				07D0F5202078164400EC38F0 /* Constants.h */,
+				07D0F5242078199800EC38F0 /* UIBarButtonItem+Extensions.h */,
+				07D0F5252078199800EC38F0 /* UIBarButtonItem+Extensions.m */,
 				078CE988205C9C1C001592BA /* AppDelegate.h */,
 				078CE989205C9C1C001592BA /* AppDelegate.m */,
-				07D0F5202078164400EC38F0 /* Constants.h */,
+				07D0F521207817B400EC38F0 /* WindowAccessoryView.h */,
+				07D0F522207817B400EC38F0 /* WindowAccessoryView.m */,
 				07D0F517207812B800EC38F0 /* TabBarController.h */,
 				07D0F518207812B800EC38F0 /* TabBarController.m */,
 				07D0F51A2078139600EC38F0 /* BorderedViewController.h */,
@@ -233,6 +243,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				07D0F519207812B800EC38F0 /* TabBarController.m in Sources */,
+				07D0F523207817B400EC38F0 /* WindowAccessoryView.m in Sources */,
+				07D0F5262078199800EC38F0 /* UIBarButtonItem+Extensions.m in Sources */,
 				07D0F51C2078139600EC38F0 /* BorderedViewController.m in Sources */,
 				078CE998205C9C1C001592BA /* main.m in Sources */,
 				078CE98A205C9C1C001592BA /* AppDelegate.m in Sources */,

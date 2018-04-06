@@ -27,7 +27,6 @@
         return nil;
     
     self.viewControllers = @[[[UINavigationController alloc] initWithRootViewController:[[BorderedViewController alloc] initWithNibName:nil bundle:nil]]];
-//    self.selectedIndex = 0;
     
     return self;
 }
