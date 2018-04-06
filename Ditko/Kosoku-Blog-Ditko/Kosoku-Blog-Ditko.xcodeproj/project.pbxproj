@@ -8,11 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		078CE98A205C9C1C001592BA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 078CE989205C9C1C001592BA /* AppDelegate.m */; };
-		078CE98D205C9C1C001592BA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 078CE98C205C9C1C001592BA /* ViewController.m */; };
-		078CE990205C9C1C001592BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 078CE98E205C9C1C001592BA /* Main.storyboard */; };
 		078CE992205C9C1C001592BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 078CE991205C9C1C001592BA /* Assets.xcassets */; };
 		078CE995205C9C1C001592BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 078CE993205C9C1C001592BA /* LaunchScreen.storyboard */; };
 		078CE998205C9C1C001592BA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 078CE997205C9C1C001592BA /* main.m */; };
+		07D0F519207812B800EC38F0 /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D0F518207812B800EC38F0 /* TabBarController.m */; };
+		07D0F51C2078139600EC38F0 /* BorderedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D0F51B2078139600EC38F0 /* BorderedViewController.m */; };
+		07D0F51F2078141700EC38F0 /* BorderedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07D0F51D2078141700EC38F0 /* BorderedViewController.xib */; };
 		3F96BE14431A6071472D5EC4 /* libPods-Kosoku-Blog-Ditko.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DFDEFD4DCCCC4962A7B3B4F /* libPods-Kosoku-Blog-Ditko.a */; };
 /* End PBXBuildFile section */
 
@@ -20,13 +21,15 @@
 		078CE985205C9C1C001592BA /* Kosoku-Blog-Ditko.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kosoku-Blog-Ditko.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		078CE988205C9C1C001592BA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		078CE989205C9C1C001592BA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		078CE98B205C9C1C001592BA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		078CE98C205C9C1C001592BA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		078CE98F205C9C1C001592BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		078CE991205C9C1C001592BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		078CE994205C9C1C001592BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		078CE996205C9C1C001592BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		078CE997205C9C1C001592BA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		07D0F517207812B800EC38F0 /* TabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
+		07D0F518207812B800EC38F0 /* TabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
+		07D0F51A2078139600EC38F0 /* BorderedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BorderedViewController.h; sourceTree = "<group>"; };
+		07D0F51B2078139600EC38F0 /* BorderedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BorderedViewController.m; sourceTree = "<group>"; };
+		07D0F51E2078141700EC38F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/BorderedViewController.xib; sourceTree = "<group>"; };
 		31FF0E510B440F72C55BC8C5 /* Pods-Kosoku-Blog-Ditko.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kosoku-Blog-Ditko.release.xcconfig"; path = "Pods/Target Support Files/Pods-Kosoku-Blog-Ditko/Pods-Kosoku-Blog-Ditko.release.xcconfig"; sourceTree = "<group>"; };
 		3DFDEFD4DCCCC4962A7B3B4F /* libPods-Kosoku-Blog-Ditko.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Kosoku-Blog-Ditko.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AA2C4B1E40BA2DF65B1A283 /* Pods-Kosoku-Blog-Ditko.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kosoku-Blog-Ditko.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Kosoku-Blog-Ditko/Pods-Kosoku-Blog-Ditko.debug.xcconfig"; sourceTree = "<group>"; };
@@ -67,9 +70,11 @@
 			children = (
 				078CE988205C9C1C001592BA /* AppDelegate.h */,
 				078CE989205C9C1C001592BA /* AppDelegate.m */,
-				078CE98B205C9C1C001592BA /* ViewController.h */,
-				078CE98C205C9C1C001592BA /* ViewController.m */,
-				078CE98E205C9C1C001592BA /* Main.storyboard */,
+				07D0F517207812B800EC38F0 /* TabBarController.h */,
+				07D0F518207812B800EC38F0 /* TabBarController.m */,
+				07D0F51A2078139600EC38F0 /* BorderedViewController.h */,
+				07D0F51B2078139600EC38F0 /* BorderedViewController.m */,
+				07D0F51D2078141700EC38F0 /* BorderedViewController.xib */,
 				078CE991205C9C1C001592BA /* Assets.xcassets */,
 				078CE993205C9C1C001592BA /* LaunchScreen.storyboard */,
 				078CE996205C9C1C001592BA /* Info.plist */,
@@ -158,7 +163,7 @@
 			files = (
 				078CE995205C9C1C001592BA /* LaunchScreen.storyboard in Resources */,
 				078CE992205C9C1C001592BA /* Assets.xcassets in Resources */,
-				078CE990205C9C1C001592BA /* Main.storyboard in Resources */,
+				07D0F51F2078141700EC38F0 /* BorderedViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,9 +177,9 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Kosoku-Blog-Ditko/Pods-Kosoku-Blog-Ditko-resources.sh",
-				"$PODS_CONFIGURATION_BUILD_DIR/Ditko/Ditko.bundle",
-				"$PODS_CONFIGURATION_BUILD_DIR/KSOFontAwesomeExtensions/KSOFontAwesomeExtensions.bundle",
-				"$PODS_CONFIGURATION_BUILD_DIR/Stanley/Stanley.bundle",
+				$PODS_CONFIGURATION_BUILD_DIR/Ditko/Ditko.bundle,
+				$PODS_CONFIGURATION_BUILD_DIR/KSOFontAwesomeExtensions/KSOFontAwesomeExtensions.bundle,
+				$PODS_CONFIGURATION_BUILD_DIR/Stanley/Stanley.bundle,
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
@@ -225,7 +230,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				078CE98D205C9C1C001592BA /* ViewController.m in Sources */,
+				07D0F519207812B800EC38F0 /* TabBarController.m in Sources */,
+				07D0F51C2078139600EC38F0 /* BorderedViewController.m in Sources */,
 				078CE998205C9C1C001592BA /* main.m in Sources */,
 				078CE98A205C9C1C001592BA /* AppDelegate.m in Sources */,
 			);
@@ -234,20 +240,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		078CE98E205C9C1C001592BA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				078CE98F205C9C1C001592BA /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		078CE993205C9C1C001592BA /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				078CE994205C9C1C001592BA /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		07D0F51D2078141700EC38F0 /* BorderedViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				07D0F51E2078141700EC38F0 /* Base */,
+			);
+			name = BorderedViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

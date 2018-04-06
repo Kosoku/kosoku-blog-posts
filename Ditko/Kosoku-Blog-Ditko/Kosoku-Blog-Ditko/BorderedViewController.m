@@ -1,8 +1,8 @@
 //
-//  AppDelegate.m
+//  BorderedViewController.m
 //  Kosoku-Blog-Ditko
 //
-//  Created by William Towe on 3/16/18.
+//  Created by William Towe on 4/6/18.
 //  Copyright © 2018 Kosoku Interactive, LLC. All rights reserved.
 //
 //  Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
@@ -13,24 +13,25 @@
 //
 //  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#import "AppDelegate.h"
-#import "TabBarController.h"
+#import "BorderedViewController.h"
 
 #import <Ditko/Ditko.h>
 
-@interface AppDelegate ()
-
+@interface BorderedViewController ()
+@property (weak,nonatomic) IBOutlet KDIView *borderedView;
 @end
 
-@implementation AppDelegate
+@implementation BorderedViewController
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    self.window = [[KDIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
-    self.window.rootViewController = [[TabBarController alloc] initWithNibName:nil bundle:nil];
+- (NSString *)title {
+    return @"Bordered View";
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
     
-    [self.window makeKeyAndVisible];
-    
-    return YES;
+    self.borderedView.borderOptions = KDIBorderOptionsTopAndBottom;
+    self.borderedView.borderColor = KDIColorRandomRGB();
 }
 
 @end
