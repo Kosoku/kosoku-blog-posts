@@ -19,46 +19,46 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIColor (KDIExtensions)
 
+#pragma mark Creation
 /**
- Creates and returns a UIColor in the RGB color space with random values between 0 and 255 for R, G, and B respectively. Alpha is always 1.0.
- 
- @return The random UIColor
+ Creates and returns a color in the RGB color space with random values between 0 and 255 for R, G, and B respectively. Alpha is always 1.0.
  */
-+ (UIColor *)KDI_colorRandomRGB;
+@property (class,readonly,nonatomic) UIColor *KDI_colorRandomRGB;
 /**
  Creates and returns a UIColor in the RGB color space with random values between 0 and 255 for R, G, B, and A respectively.
- 
- @return The random UIColor
  */
-+ (UIColor *)KDI_colorRandomRGBA;
+@property (class,readonly,nonatomic) UIColor *KDI_colorRandomRGBA;
+/**
+ Creates and returns a random color in the HSB color space, using values between 0 and 240 for H, S, and B respectively. Alpha is always 1.0.
+ */
+@property (class,readonly,nonatomic) UIColor *KDI_colorRandomHSB;
+/**
+ Creates and returns a random color in the HSB color space, using values between 0 and 240 for H, S, B, and A respectively.
+ */
+@property (class,readonly,nonatomic) UIColor *KDI_colorRandomHSBA;
+
+#pragma mark Hexadecimal
+/**
+ Creates and returns a color by parsing *hexadecimalString*.
+ 
+ @param hexadecimalString The string to parse
+ @return The UIColor created from *hexadecimalString*
+ */
++ (nullable UIColor *)KDI_colorWithHexadecimalString:(nullable NSString *)hexadecimalString;
 
 /**
- Creates and returns a contrasting color for the provided *color*, which will either be UIColor.blackColor or UIColor.whiteColor depending on the perceived brightness of *color*. The perceived brightness is calculated using https://www.w3.org/TR/AERT#color-contrast as a reference. If the contrasting color cannot be computed, *color* is returned.
+ Returns the hexadecimal string from *color*.
  
- @param color The color for which to compute the contrasting color
- @return The contrasting color
+ @param color The color for which to return a hexadecimal string
+ @return The hexadecimal string
  */
-+ (UIColor *)KDI_contrastingColorOfColor:(UIColor *)color;
++ (nullable NSString *)KDI_hexadecimalStringFromColor:(UIColor *)color;
 /**
- Returns [self.class KDI_contrastingColorOfColor:self].
- 
- @return The contrasting color
+ Returns [self.class KDI_hexadecimalStringFromColor:self].
  */
-- (UIColor *)KDI_contrastingColor;
+- (nullable NSString *)KDI_hexadecimalString;
 
-/**
- Creates and returns the inverse of the provided color. The inverse of UIColor.blackColor is UIColor.whiteColor.
- 
- @param color The color for which to return the inverse color
- @return The inverse color
- */
-+ (UIColor *)KDI_inverseColorOfColor:(UIColor *)color;
-/**
- Returns [self.class KDI_inverseColorOfColor:self].
- 
- @return The inverse color
- */
-- (UIColor *)KDI_inverseColor;
+#pragma mark Visibility
 /**
  Tells where the the color has enough luminance compared to the backgroundColor at stated tolerance (luminance level to surpass).
  
@@ -68,16 +68,91 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (BOOL)KDI_colorVisibleOverBackgroundColor:(UIColor *)backgroundColor tolerance:(CGFloat)tolerance;
 
+#pragma mark Contrasting
 /**
- Creates and returns an UIColor by parsing *hexadecimalString*. See http://www.karelia.com/cocoa_legacy/Foundation_Categories/NSColor__Instantiat.m for implementation reference.
+ Creates and returns a contrasting color for the provided *color*, which will either be UIColor.blackColor or UIColor.whiteColor depending on the perceived brightness of *color*. The perceived brightness is calculated using https://www.w3.org/TR/AERT#color-contrast as a reference. If the contrasting color cannot be computed, *color* is returned.
  
- @param hexadecimalString The string to parse
- @return The UIColor created from *hexadecimalString*
+ @param color The color for which to compute the contrasting color
+ @return The contrasting color
  */
-+ (nullable UIColor *)KDI_colorWithHexadecimalString:(nullable NSString *)hexadecimalString;
-
++ (nullable UIColor *)KDI_contrastingColorOfColor:(nullable UIColor *)color;
 /**
- Creates and returns a new color by adjusting the bright of color by *delta*. Clamps the new brightness between 0.0 and 1.0.
+ Returns [self.class KDI_contrastingColorOfColor:self].
+ 
+ @return The contrasting color
+ */
+- (UIColor *)KDI_contrastingColor;
+
+#pragma mark Inverse
+/**
+ Creates and returns the inverse of the provided color. The inverse of UIColor.blackColor is UIColor.whiteColor.
+ 
+ @param color The color for which to return the inverse color
+ @return The inverse color
+ */
++ (nullable UIColor *)KDI_inverseColorOfColor:(nullable UIColor *)color;
+/**
+ Returns [self.class KDI_inverseColorOfColor:self].
+ 
+ @return The inverse color
+ */
+- (UIColor *)KDI_inverseColor;
+
+#pragma mark Hue
+/**
+ Returns a color by adjusting the hue of the *color* by *delta*.
+ 
+ @param color The color to adjust
+ @param delta The amount to adjust by
+ @return The new color
+ */
++ (nullable UIColor *)KDI_colorByAdjustingHueOfColor:(nullable UIColor *)color delta:(CGFloat)delta;
+/**
+ Returns [self.class KDI_colorByAdjustingHueOfColor:self delta:delta].
+ */
+- (nullable UIColor *)KDI_colorByAdjustingHueBy:(CGFloat)delta;
+/**
+ Returns a color by adjusting the hue of the *color* by a *percent* of its current value.
+ 
+ @param color The color to adjust
+ @param percent The percentage to adjust by
+ @return The new color
+ */
++ (nullable UIColor *)KDI_colorByAdjustingHueOfColor:(nullable UIColor *)color percent:(CGFloat)percent;
+/**
+ Returns [self.class KDI_colorByAdjustingHueOfColor:self percent:percent].
+ */
+- (nullable UIColor *)KDI_colorByAdjustingHueByPercent:(CGFloat)percent;
+
+#pragma mark Saturation
+/**
+ Returns a color by adjusting the saturation of the *color* by *delta*.
+ 
+ @param color The color to adjust
+ @param delta The amount to adjust by
+ @return The new color
+ */
++ (nullable UIColor *)KDI_colorByAdjustingSaturationOfColor:(nullable UIColor *)color delta:(CGFloat)delta;
+/**
+ Returns [self.class KDI_colorByAdjustingSaturationOfColor:self delta:delta].
+ */
+- (nullable UIColor *)KDI_colorByAdjustingSaturationBy:(CGFloat)delta;
+/**
+ Returns a color by adjusting the saturation of the *color* by a *percent* of its current value.
+ 
+ @param color The color to adjust
+ @param percent The percentage to adjust by
+ @return The new color
+ */
++ (nullable UIColor *)KDI_colorByAdjustingSaturationOfColor:(nullable UIColor *)color percent:(CGFloat)percent;
+/**
+ Returns [self.class KDI_colorByAdjustingSaturationOfColor:self percent:percent].
+ */
+- (nullable UIColor *)KDI_colorByAdjustingSaturationByPercent:(CGFloat)percent;
+
+#pragma mark Brightness
+/**
+ Returns a color by adjusting the brightness of *color* by *delta*. Clamps the new brightness between 0.0 and 1.0.
  
  @param color The color to adjust
  @param delta The amount to adjust the brightness
@@ -91,6 +166,18 @@ NS_ASSUME_NONNULL_BEGIN
  @return The new color
  */
 - (nullable UIColor *)KDI_colorByAdjustingBrightnessBy:(CGFloat)delta;
+/**
+ Returns a color by adjusting the brightness of the *color* by a *percent* of its current value.
+ 
+ @param color The color to adjust
+ @param percent The percentage to adjust by
+ @return The new color
+ */
++ (nullable UIColor *)KDI_colorByAdjustingBrightnessOfColor:(nullable UIColor *)color percent:(CGFloat)percent;
+/**
+ Returns [self.class KDI_colorByAdjustingBrightnessOfColor:self percent:percent].
+ */
+- (nullable UIColor *)KDI_colorByAdjustingBrightnessByPercent:(CGFloat)percent;
 
 @end
 

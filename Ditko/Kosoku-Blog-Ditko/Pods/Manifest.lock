@@ -1,20 +1,20 @@
 PODS:
-  - Ditko (3.14.0):
+  - Ditko (3.21.0):
     - KSOFontAwesomeExtensions
     - Loki
     - Stanley
   - KSOFontAwesomeExtensions (1.1.0):
     - Stanley
-  - Loki (1.0.0)
+  - Loki (1.1.0)
   - Stanley (2.3.0)
 
 DEPENDENCIES:
   - Ditko
 
 SPEC CHECKSUMS:
-  Ditko: 5e683370be79fc61d6fc1a2dd0c4620814703aef
+  Ditko: 2455a889d014b3c87acd052f2de96260a974dda9
   KSOFontAwesomeExtensions: d15daa935ac45e54f4975febe0f9ab1807c96b42
-  Loki: fc6b81dcad6c4363d1678d6adbc9018a2191e760
+  Loki: 8430515eba920b6d989f1f8adad039278d432e6a
   Stanley: 8fe2bc612818deac8280f94ba2c776462706d90b
 
 PODFILE CHECKSUM: 760f0a60e56693a7da86bb9cfb4daf22314a7844

@@ -6,4 +6,20 @@ This post will finish covering [Ditko](https://github.com/Kosoku/Ditko), a UI-ce
 
 ## Classes
 
+*KDIWindow.h* provides a `UIWindow` subclass that allows for an accessory view to be placed at the top or bottom edge of the window, similar to the in call bar on iPhone. For example:
+
+```objc
+#import <Ditko/Ditko.h>
+
+// assume this exists
+UIView *view = ...;
+// from the root view controller of the application
+KDIWindow *window = ...;
+
+// by default the window will layout the accessory view at the top edge
+window.accessoryView = view;
+```
+
+You could make something that looks like this:
+
 

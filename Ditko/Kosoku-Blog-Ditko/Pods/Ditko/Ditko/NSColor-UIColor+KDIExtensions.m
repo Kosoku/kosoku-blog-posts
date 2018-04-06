@@ -29,17 +29,9 @@ static inline CGFloat KDIPerceivedBrightnessForRedGreenAndBlue(CGFloat red, CGFl
     return (1.0 - (red * 0.299 + green * 0.587 + blue * 0.114));
 }
 
-#if (TARGET_OS_IPHONE)
-@implementation UIColor (KDIExtensions)
-#else
-@implementation NSColor (KDIExtensions)
-#endif
+@implementation KDIColor (KDIExtensions)
 
-#if (TARGET_OS_IPHONE)
-+ (UIColor *)KDI_colorRandomRGB; {
-#else
-+ (NSColor *)KDI_colorRandomRGB; {
-#endif
++ (KDIColor *)KDI_colorRandomRGB; {
     u_int32_t max = 255;
     u_int32_t red = arc4random_uniform(max);
     u_int32_t green = arc4random_uniform(max);
@@ -51,11 +43,7 @@ static inline CGFloat KDIPerceivedBrightnessForRedGreenAndBlue(CGFloat red, CGFl
     return [NSColor colorWithCalibratedRed:red/255.0 green:green/255.0 blue:blue/255.0 alpha:1.0];
 #endif
 }
-#if (TARGET_OS_IPHONE)
-+ (UIColor *)KDI_colorRandomRGBA; {
-#else
-+ (NSColor *)KDI_colorRandomRGBA; {
-#endif
++ (KDIColor *)KDI_colorRandomRGBA; {
     u_int32_t max = 255;
     u_int32_t red = arc4random_uniform(max);
     u_int32_t green = arc4random_uniform(max);
@@ -67,6 +55,118 @@ static inline CGFloat KDIPerceivedBrightnessForRedGreenAndBlue(CGFloat red, CGFl
 #else
     return [NSColor colorWithCalibratedRed:red/255.0 green:green/255.0 blue:blue/255.0 alpha:alpha/255.0];
 #endif
+}
+    
++ (KDIColor *)KDI_colorRandomHSB; {
+    u_int32_t max = 240;
+    u_int32_t hue = arc4random_uniform(max);
+    u_int32_t saturation = arc4random_uniform(max);
+    u_int32_t brightness = arc4random_uniform(max);
+    
+#if (TARGET_OS_IPHONE)
+    return [UIColor colorWithRed:hue/(CGFloat)max green:saturation/(CGFloat)max blue:brightness/(CGFloat)max alpha:1.0];
+#else
+    return [NSColor colorWithCalibratedHue:hue/(CGFloat)max saturation:saturation/(CGFloat)max brightness:brightness/(CGFloat)max alpha:1.0];
+#endif
+}
++ (KDIColor *)KDI_colorRandomHSBA; {
+    u_int32_t max = 240;
+    u_int32_t hue = arc4random_uniform(max);
+    u_int32_t saturation = arc4random_uniform(max);
+    u_int32_t brightness = arc4random_uniform(max);
+    u_int32_t alpha = arc4random_uniform(255);
+    
+#if (TARGET_OS_IPHONE)
+    return [UIColor colorWithRed:hue/(CGFloat)max green:saturation/(CGFloat)max blue:brightness/(CGFloat)max alpha:alpha/255.0];
+#else
+    return [NSColor colorWithCalibratedHue:hue/(CGFloat)max saturation:saturation/(CGFloat)max brightness:brightness/(CGFloat)max alpha:alpha/255.0];
+#endif
+}
+
++ (KDIColor *)KDI_colorWithHexadecimalString:(NSString *)hexadecimalString; {
+    if (hexadecimalString.length == 0) {
+        return nil;
+    }
+    
+    hexadecimalString = [hexadecimalString stringByReplacingOccurrencesOfString:@"#" withString:@""];
+    
+    if ([hexadecimalString hasPrefix:@"0x"]) {
+        hexadecimalString = [hexadecimalString stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"0x"]];
+    }
+    
+    KDIColor *retval = nil;
+    NSScanner *scanner = [NSScanner scannerWithString:hexadecimalString];
+    
+    uint32_t hexadecimalColor;
+    if (![scanner scanHexInt:&hexadecimalColor]) {
+        return retval;
+    }
+    
+    uint8_t red = (uint8_t)(hexadecimalColor >> 16);
+    uint8_t green = (uint8_t)(hexadecimalColor >> 8);
+    uint8_t blue = (uint8_t)hexadecimalColor;
+    CGFloat alpha = hexadecimalColor > 0xFFFFFF ? ((CGFloat)((hexadecimalColor >> 24) & 0xFF)) / ((CGFloat)0xFF) : 1.0;
+    
+#if (TARGET_OS_IPHONE)
+    retval = [UIColor colorWithRed:(CGFloat)red/0xff green:(CGFloat)green/0xff blue:(CGFloat)blue/0xff alpha:alpha];
+#else
+    retval = [NSColor colorWithCalibratedRed:(CGFloat)red/0xff green:(CGFloat)green/0xff blue:(CGFloat)blue/0xff alpha:alpha];
+#endif
+    
+    return retval;
+}
+
++ (nullable NSString *)KDI_hexadecimalStringFromColor:(KDIColor *)color; {
+    CGFloat red, green, blue, alpha;
+#if (TARGET_OS_IPHONE)
+    if (![color getRed:&red green:&green blue:&blue alpha:&alpha]) {
+        [color getWhite:&red alpha:&alpha];
+        green = red;
+        blue = red;
+    }
+#else
+    [color getRed:&red green:&green blue:&blue alpha:&alpha];
+#endif
+    
+    red = round(red * 255.f);
+    green = round(green * 255.f);
+    blue = round(blue * 255.f);
+    alpha = round(alpha * 255.f);
+    
+    uint32_t hex = ((uint32_t)alpha << 24) | ((uint32_t)red << 16) | ((uint32_t)green << 8) | ((uint32_t)blue);
+    
+    return [NSString stringWithFormat:@"%08x",hex];
+}
+- (nullable NSString *)KDI_hexadecimalString; {
+    return [self.class KDI_hexadecimalStringFromColor:self];
+}
+
+- (BOOL)KDI_colorVisibleOverBackgroundColor:(KDIColor *)backgroundColor tolerance:(CGFloat)tolerance; {
+    CGFloat foregroundLuminance;
+    CGFloat fRed = 0.0, fGreen = 0.0, fBlue = 0.0, fAlpha = 0.0;
+    
+    [self getRed:&fRed green:&fGreen blue:&fBlue alpha:&fAlpha];
+    
+    fRed *= 0.2126f;
+    fGreen *= 0.7152f;
+    fBlue *= 0.0722f;
+    foregroundLuminance = fRed + fGreen + fBlue;
+    
+    CGFloat backgroundLuminance;
+    CGFloat bRed = 0.0, bGreen = 0.0, bBlue = 0.0, bAlpha = 0.0;
+    
+    [backgroundColor getRed:&bRed green:&bGreen blue:&bBlue alpha:&bAlpha];
+    
+    bRed *= 0.2126f;
+    bGreen *= 0.7152f;
+    bBlue *= 0.0722f;
+    backgroundLuminance = bRed + bGreen + bBlue;
+    
+    if (backgroundLuminance < tolerance) {
+        return foregroundLuminance > backgroundLuminance;
+    } else {
+        return foregroundLuminance < backgroundLuminance;
+    }
 }
     
 + (KDIColor *)KDI_contrastingColorOfColor:(KDIColor *)color; {
@@ -156,77 +256,8 @@ static inline CGFloat KDIPerceivedBrightnessForRedGreenAndBlue(CGFloat red, CGFl
 - (KDIColor *)KDI_inverseColor {
     return [KDIColor KDI_inverseColorOfColor:self];
 }
-    
-- (BOOL)KDI_colorVisibleOverBackgroundColor:(KDIColor *)backgroundColor tolerance:(CGFloat)tolerance; {
-    CGFloat foregroundLuminance;
-    CGFloat fRed = 0.0, fGreen = 0.0, fBlue = 0.0, fAlpha = 0.0;
-    
-    [self getRed:&fRed green:&fGreen blue:&fBlue alpha:&fAlpha];
-    
-    fRed *= 0.2126f;
-    fGreen *= 0.7152f;
-    fBlue *= 0.0722f;
-    foregroundLuminance = fRed + fGreen + fBlue;
-    
-    CGFloat backgroundLuminance;
-    CGFloat bRed = 0.0, bGreen = 0.0, bBlue = 0.0, bAlpha = 0.0;
-    
-    [backgroundColor getRed:&bRed green:&bGreen blue:&bBlue alpha:&bAlpha];
-    
-    bRed *= 0.2126f;
-    bGreen *= 0.7152f;
-    bBlue *= 0.0722f;
-    backgroundLuminance = bRed + bGreen + bBlue;
-    
-    if (backgroundLuminance < tolerance) {
-        return foregroundLuminance > backgroundLuminance;
-    } else {
-        return foregroundLuminance < backgroundLuminance;
-    }
-}
 
-#if (TARGET_OS_IPHONE)
-+ (UIColor *)KDI_colorWithHexadecimalString:(NSString *)hexadecimalString; {
-#else
-+ (NSColor *)KDI_colorWithHexadecimalString:(NSString *)hexadecimalString; {
-#endif
-    if (hexadecimalString.length == 0) {
-        return nil;
-    }
-    
-    hexadecimalString = [hexadecimalString stringByReplacingOccurrencesOfString:@"#" withString:@""];
-    
-#if (TARGET_OS_IPHONE)
-    UIColor *retval = nil;
-#else
-    NSColor *retval = nil;
-#endif
-    NSScanner *scanner = [NSScanner scannerWithString:hexadecimalString];
-    
-    uint32_t hexadecimalColor;
-    if (![scanner scanHexInt:&hexadecimalColor]) {
-        return retval;
-    }
-    
-    uint8_t red = (uint8_t)(hexadecimalColor >> 16);
-    uint8_t green = (uint8_t)(hexadecimalColor >> 8);
-    uint8_t blue = (uint8_t)hexadecimalColor;
-
-#if (TARGET_OS_IPHONE)
-    retval = [UIColor colorWithRed:(CGFloat)red/0xff green:(CGFloat)green/0xff blue:(CGFloat)blue/0xff alpha:1.0];
-#else
-    retval = [NSColor colorWithCalibratedRed:(CGFloat)red/0xff green:(CGFloat)green/0xff blue:(CGFloat)blue/0xff alpha:1.0];
-#endif
-    
-    return retval;
-}
-
-#if (TARGET_OS_IPHONE)
-+ (UIColor *)KDI_colorByAdjustingBrightnessOfColor:(UIColor *)color delta:(CGFloat)delta; {
-#else
-+ (NSColor *)KDI_colorByAdjustingBrightnessOfColor:(NSColor *)color delta:(CGFloat)delta; {
-#endif
-    
++ (KDIColor *)KDI_colorByAdjustingBrightnessOfColor:(KDIColor *)color delta:(CGFloat)delta; {
     CGFloat hue, saturation, brightness, alpha;
     
 #if (TARGET_OS_IPHONE)
@@ -257,12 +288,105 @@ static inline CGFloat KDIPerceivedBrightnessForRedGreenAndBlue(CGFloat red, CGFl
 #endif
 }
 
-#if (TARGET_OS_IPHONE)
-- (UIColor *)KDI_colorByAdjustingBrightnessBy:(CGFloat)delta; {
-#else
-- (NSColor *)KDI_colorByAdjustingBrightnessBy:(CGFloat)delta; {
-#endif
+- (KDIColor *)KDI_colorByAdjustingBrightnessBy:(CGFloat)delta; {
     return [self.class KDI_colorByAdjustingBrightnessOfColor:self delta:delta];
+}
+    
++ (KDIColor *)KDI_colorByAdjustingBrightnessOfColor:(KDIColor *)color percent:(CGFloat)percent; {
+    CGFloat brightness;
+#if (TARGET_OS_IPHONE)
+    if ([color getHue:NULL saturation:NULL brightness:&brightness alpha:NULL]) {
+        return [self KDI_colorByAdjustingBrightnessOfColor:color delta:brightness * percent];
+    }
+#else
+    [color getHue:NULL saturation:NULL brightness:&brightness alpha:NULL];
+    
+    return [self KDI_colorByAdjustingBrightnessOfColor:color delta:brightness * percent];
+#endif
+    return color;
+}
+- (KDIColor *)KDI_colorByAdjustingBrightnessByPercent:(CGFloat)percent; {
+    return [self.class KDI_colorByAdjustingBrightnessOfColor:self percent:percent];
+}
+
++ (KDIColor *)KDI_colorByAdjustingHueOfColor:(KDIColor *)color delta:(CGFloat)delta; {
+    CGFloat hue, saturation, brightness, alpha;
+#if (TARGET_OS_IPHONE)
+    if ([color getHue:&hue saturation:&saturation brightness:&brightness alpha:&alpha]) {
+        hue += delta;
+        hue = KSTBoundedValue(hue, 0.0, 1.0);
+        
+        return [UIColor colorWithHue:hue saturation:saturation brightness:brightness alpha:alpha];
+    }
+#else
+    [color getHue:&hue saturation:&saturation brightness:&brightness alpha:&alpha];
+    
+    hue += delta;
+    hue = KSTBoundedValue(hue, 0.0, 1.0);
+    
+    return [NSColor colorWithCalibratedHue:hue saturation:saturation brightness:brightness alpha:alpha];
+#endif
+    return color;
+}
+- (KDIColor *)KDI_colorByAdjustingHueBy:(CGFloat)delta {
+    return [self.class KDI_colorByAdjustingHueOfColor:self delta:delta];
+}
+    
++ (KDIColor *)KDI_colorByAdjustingHueOfColor:(KDIColor *)color percent:(CGFloat)percent; {
+    CGFloat hue;
+#if (TARGET_OS_IPHONE)
+    if ([color getHue:&hue saturation:NULL brightness:NULL alpha:NULL]) {
+        return [self KDI_colorByAdjustingHueOfColor:color delta:hue * percent];
+    }
+#else
+    [color getHue:&hue saturation:NULL brightness:NULL alpha:NULL];
+    
+    return [self KDI_colorByAdjustingHueOfColor:color delta:hue * percent];
+#endif
+    return color;
+}
+- (KDIColor *)KDI_colorByAdjustingHueByPercent:(CGFloat)percent; {
+    return [self.class KDI_colorByAdjustingHueOfColor:self percent:percent];
+}
+    
++ (KDIColor *)KDI_colorByAdjustingSaturationOfColor:(KDIColor *)color delta:(CGFloat)delta; {
+    CGFloat hue, saturation, brightness, alpha;
+#if (TARGET_OS_IPHONE)
+    if ([color getHue:&hue saturation:&saturation brightness:&brightness alpha:&alpha]) {
+        saturation += delta;
+        saturation = KSTBoundedValue(saturation, 0.0, 1.0);
+        
+        return [UIColor colorWithHue:hue saturation:saturation brightness:brightness alpha:alpha];
+    }
+#else
+    [color getHue:&hue saturation:&saturation brightness:&brightness alpha:&alpha];
+    
+    saturation += delta;
+    saturation = KSTBoundedValue(saturation, 0.0, 1.0);
+    
+    return [NSColor colorWithCalibratedHue:hue saturation:saturation brightness:brightness alpha:alpha];
+#endif
+    return color;
+}
+- (KDIColor *)KDI_colorByAdjustingSaturationBy:(CGFloat)delta; {
+    return [self.class KDI_colorByAdjustingSaturationOfColor:self delta:delta];
+}
+
++ (KDIColor *)KDI_colorByAdjustingSaturationOfColor:(KDIColor *)color percent:(CGFloat)percent; {
+    CGFloat saturation;
+#if (TARGET_OS_IPHONE)
+    if ([color getHue:NULL saturation:&saturation brightness:NULL alpha:NULL]) {
+        return [self KDI_colorByAdjustingSaturationOfColor:color delta:saturation * percent];
+    }
+#else
+    [color getHue:NULL saturation:&saturation brightness:NULL alpha:NULL];
+    
+    return [self KDI_colorByAdjustingSaturationOfColor:color delta:saturation * percent];
+#endif
+    return color;
+}
+- (KDIColor *)KDI_colorByAdjustingSaturationByPercent:(CGFloat)percent; {
+    return [self.class KDI_colorByAdjustingSaturationOfColor:self percent:percent];
 }
 
 @end
