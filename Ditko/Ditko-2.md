@@ -22,4 +22,4 @@ window.accessoryView = view;
 
 You could make something that looks like this:
 
-
+<img src="KDIWindow.png" alt="KDIWindow example" style="width: 320px;"/>
