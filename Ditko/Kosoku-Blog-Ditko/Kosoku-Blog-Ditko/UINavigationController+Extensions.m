@@ -1,8 +1,8 @@
 //
-//  BorderedViewController.m
+//  UINavigationController+Extensions.m
 //  Kosoku-Blog-Ditko
 //
-//  Created by William Towe on 4/6/18.
+//  Created by William Towe on 4/7/18.
 //  Copyright © 2018 Kosoku Interactive, LLC. All rights reserved.
 //
 //  Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
@@ -13,40 +13,12 @@
 //
 //  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#import "BorderedViewController.h"
-#import "Constants.h"
-#import "UIBarButtonItem+Extensions.h"
+#import "UINavigationController+Extensions.h"
 
-#import <KSOFontAwesomeExtensions/KSOFontAwesomeExtensions.h>
-#import <Ditko/Ditko.h>
+@implementation UINavigationController (Extensions)
 
-@interface BorderedViewController ()
-@property (weak,nonatomic) IBOutlet KDIView *borderedView;
-@end
-
-@implementation BorderedViewController
-
-- (NSString *)title {
-    return @"KDIView";
-}
-
-- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if (!(self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]))
-        return nil;
-    
-    self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Border" image:[UIImage KSO_fontAwesomeSolidImageWithString:@"\uf069" size:kBarButtonItemImageSize].KDI_templateImage selectedImage:nil];
-    
-    self.navigationItem.rightBarButtonItems = @[[UIBarButtonItem KSO_toggleWindowAccessoryBarButtonItem]];
-    
-    return self;
-}
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    self.borderedView.borderOptions = KDIBorderOptionsTopAndBottom;
-    self.borderedView.borderWidth = 2;
-    self.borderedView.borderColor = KDIColorRandomRGB();
++ (UINavigationController *)KSO_navigationControllerWithViewController:(UIViewController *)viewController; {
+    return [[UINavigationController alloc] initWithRootViewController:viewController];
 }
 
 @end

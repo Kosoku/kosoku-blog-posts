@@ -15,6 +15,8 @@
 
 #import "TabBarController.h"
 #import "BorderedViewController.h"
+#import "BadgeViewController.h"
+#import "UINavigationController+Extensions.h"
 
 @interface TabBarController ()
 
@@ -26,7 +28,8 @@
     if (!(self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]))
         return nil;
     
-    self.viewControllers = @[[[UINavigationController alloc] initWithRootViewController:[[BorderedViewController alloc] initWithNibName:nil bundle:nil]]];
+    self.viewControllers = @[[UINavigationController KSO_navigationControllerWithViewController:[[BorderedViewController alloc] initWithNibName:nil bundle:nil]],
+                             [UINavigationController KSO_navigationControllerWithViewController:[[BadgeViewController alloc] initWithNibName:nil bundle:nil]]];
     
     return self;
 }
