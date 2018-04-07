@@ -44,3 +44,5 @@ view.badge = @"Badged!";
 ```
 
 You get something that looks like this:
+
+<img src="KDIBadgeView.png" alt="KDIBadgeView example" style="width: 320px;"/>
