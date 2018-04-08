@@ -6,9 +6,7 @@ This post will finish covering [Ditko](https://github.com/Kosoku/Ditko), a UI-ce
 
 The Xcode project that was used to generate the images in this post is also available on [Kosoku's GitHub](https://github.com/Kosoku/kosoku-blog-posts/tree/master/Ditko/Kosoku-Blog-Ditko).
 
-## Classes
-
-### KDIWindow
+## KDIWindow
 
 *KDIWindow.h* is a `UIWindow` subclass that allows for an accessory view to be placed at the top or bottom edge of the window, similar to the in call bar on iPhone. For example:
 
@@ -28,7 +26,7 @@ You get something that looks like this:
 
 <img src="KDIWindow.png" alt="KDIWindow example" style="width: 320px;"/>
 
-### KDIBadgeView
+## KDIBadgeView
 
 *KDIBadgeView.h* is a `UIView` subclass that draws a badge, similar to the system badging of tab bar items. It is very customizable, provides properties to change the foreground and background colors in normal and highlighted state as well as font, edge insets, and corner radius. For example:
 
@@ -47,7 +45,7 @@ You get something that looks like this:
 
 <img src="KDIBadgeView.png" alt="KDIBadgeView example" style="width: 320px;"/>
 
-### KDIButton
+## KDIButton
 
 *KDIButton.h* is a `UIButton` subclass that provides a variety of additional methods, including setting different alignments for image and title. For example, you could set image to be top alignment and centered horizontally, while setting the title to be bottom aligned and centered horizontally. Something like this:
 
@@ -69,3 +67,24 @@ button.imageContentHorizontalAlignment = KDIButtonContentHorizontalAlignmentCent
 You get a button that looks like this:
 
 <img src="KDIButton.png" alt="KDIButton example" style="width: 320px;"/>
+
+## KDIEmptyView
+
+*KDIEmptyView.h* is a `UIView` subclass that can be used to provide information to the user when content for a view is empty or unavailable. For example, you want to show the user's photos but require their permission first, this view could prompt the user to approve the system permission alert or prompt them to approve the permission in Settings if it was denied the first time. Sensible defaults are provided for font, color and spacing. For example:
+
+```objc
+#import <Ditko/Ditko.h>
+
+KDIEmptyView *view = [[KDIEmptyView alloc] initWithFrame:CGRectZero];
+// assume this exists
+UIImage *image = ...;
+
+view.image = image;
+view.headline = @"Empty Headline";
+view.body = @"Empty body text";
+view.action = @"Toggle activity indicator";
+```
+
+You get a view that looks like this:
+
+<img src="KDIEmptyView.png" alt="KDIEmptyView example" style="width: 320px;"/>
