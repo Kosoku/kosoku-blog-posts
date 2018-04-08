@@ -19,6 +19,7 @@
 
 #import <KSOFontAwesomeExtensions/KSOFontAwesomeExtensions.h>
 #import <Ditko/Ditko.h>
+#import <Stanley/Stanley.h>
 
 @implementation UIBarButtonItem (Extensions)
 
@@ -28,6 +29,25 @@
         
         window.accessoryView = window.accessoryView == nil ? [[WindowAccessoryView alloc] initWithFrame:CGRectZero] : nil;
     }];
+}
++ (UIBarButtonItem *)KSO_badgeButtonBarButtonItem; {
+    KDIBadgeButton *badgeButton = [[KDIBadgeButton alloc] initWithFrame:CGRectZero];
+    
+    kstWeakify(badgeButton);
+    void(^block)(void) = ^{
+        kstStrongify(badgeButton);
+        badgeButton.badgeView.badge = [NSNumberFormatter localizedStringFromNumber:@(arc4random_uniform(999)) numberStyle:NSNumberFormatterDecimalStyle];
+    };
+    
+    badgeButton.translatesAutoresizingMaskIntoConstraints = NO;
+    [badgeButton.button setImage:[UIImage KSO_fontAwesomeSolidImageWithString:@"\uf2b9" size:kBarButtonItemImageSize].KDI_templateImage forState:UIControlStateNormal];
+    [badgeButton.button KDI_addBlock:^(__kindof UIControl * _Nonnull control, UIControlEvents controlEvents) {
+        block();
+    } forControlEvents:UIControlEventTouchUpInside];
+    
+    block();
+    
+    return [[UIBarButtonItem alloc] initWithCustomView:badgeButton];
 }
 
 @end

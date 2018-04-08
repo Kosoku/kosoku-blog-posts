@@ -14,6 +14,7 @@
 		07165A4D2079F7BF00132D5F /* ButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07165A4C2079F7BF00132D5F /* ButtonViewController.m */; };
 		07165A502079F8B400132D5F /* ButtonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07165A4E2079F8B400132D5F /* ButtonViewController.xib */; };
 		07165A532079FCAE00132D5F /* EmptyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07165A522079FCAE00132D5F /* EmptyViewController.m */; };
+		076F1FE7207A92660049F400 /* BadgeButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 076F1FE6207A92660049F400 /* BadgeButtonViewController.m */; };
 		078CE98A205C9C1C001592BA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 078CE989205C9C1C001592BA /* AppDelegate.m */; };
 		078CE992205C9C1C001592BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 078CE991205C9C1C001592BA /* Assets.xcassets */; };
 		078CE995205C9C1C001592BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 078CE993205C9C1C001592BA /* LaunchScreen.storyboard */; };
@@ -39,6 +40,8 @@
 		07165A4F2079F8B400132D5F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ButtonViewController.xib; sourceTree = "<group>"; };
 		07165A512079FCAE00132D5F /* EmptyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmptyViewController.h; sourceTree = "<group>"; };
 		07165A522079FCAE00132D5F /* EmptyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmptyViewController.m; sourceTree = "<group>"; };
+		076F1FE5207A92660049F400 /* BadgeButtonViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BadgeButtonViewController.h; sourceTree = "<group>"; };
+		076F1FE6207A92660049F400 /* BadgeButtonViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BadgeButtonViewController.m; sourceTree = "<group>"; };
 		078CE985205C9C1C001592BA /* Kosoku-Blog-Ditko.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kosoku-Blog-Ditko.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		078CE988205C9C1C001592BA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		078CE989205C9C1C001592BA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -107,6 +110,8 @@
 				07D0F522207817B400EC38F0 /* WindowAccessoryView.m */,
 				07165A482079716100132D5F /* WindowViewController.h */,
 				07165A492079716100132D5F /* WindowViewController.m */,
+				076F1FE5207A92660049F400 /* BadgeButtonViewController.h */,
+				076F1FE6207A92660049F400 /* BadgeButtonViewController.m */,
 				07165A512079FCAE00132D5F /* EmptyViewController.h */,
 				07165A522079FCAE00132D5F /* EmptyViewController.m */,
 				07165A4B2079F7BF00132D5F /* ButtonViewController.h */,
@@ -279,6 +284,7 @@
 				07D0F519207812B800EC38F0 /* TabBarController.m in Sources */,
 				07D0F523207817B400EC38F0 /* WindowAccessoryView.m in Sources */,
 				07165A4120796D2900132D5F /* BadgeViewController.m in Sources */,
+				076F1FE7207A92660049F400 /* BadgeButtonViewController.m in Sources */,
 				07165A4720796E2900132D5F /* UINavigationController+Extensions.m in Sources */,
 				07D0F5262078199800EC38F0 /* UIBarButtonItem+Extensions.m in Sources */,
 				07D0F51C2078139600EC38F0 /* BorderedViewController.m in Sources */,

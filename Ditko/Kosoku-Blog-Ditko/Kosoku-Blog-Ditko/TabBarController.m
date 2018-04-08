@@ -20,6 +20,7 @@
 #import "WindowViewController.h"
 #import "ButtonViewController.h"
 #import "EmptyViewController.h"
+#import "BadgeButtonViewController.h"
 
 @interface TabBarController ()
 
@@ -35,7 +36,8 @@
                              [UINavigationController KSO_navigationControllerWithViewController:[[BadgeViewController alloc] initWithNibName:nil bundle:nil]],
                              [UINavigationController KSO_navigationControllerWithViewController:[[WindowViewController alloc] initWithNibName:nil bundle:nil]],
                              [UINavigationController KSO_navigationControllerWithViewController:[[ButtonViewController alloc] initWithNibName:nil bundle:nil]],
-                             [UINavigationController KSO_navigationControllerWithViewController:[[EmptyViewController alloc] initWithNibName:nil bundle:nil]]];
+                             [UINavigationController KSO_navigationControllerWithViewController:[[EmptyViewController alloc] initWithNibName:nil bundle:nil]],
+                             [UINavigationController KSO_navigationControllerWithViewController:[[BadgeButtonViewController alloc] initWithNibName:nil bundle:nil]]];
     
     return self;
 }
