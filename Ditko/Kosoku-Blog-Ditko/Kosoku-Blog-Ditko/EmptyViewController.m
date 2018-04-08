@@ -26,16 +26,7 @@
 @implementation EmptyViewController
 
 - (NSString *)title {
-    return @"KDIEmptyView";
-}
-
-- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if (!(self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]))
-        return nil;
-    
-    self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Empty" image:[UIImage KSO_fontAwesomeSolidImageWithString:@"\uf2cb" size:kBarButtonItemImageSize].KDI_templateImage selectedImage:nil];
-    
-    return self;
+    return [self.class detailViewTitle];
 }
 
 - (void)viewDidLoad {
@@ -56,6 +47,10 @@
     
     [NSLayoutConstraint activateConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[view]|" options:0 metrics:nil views:@{@"view": self.emptyView}]];
     [NSLayoutConstraint activateConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[view]|" options:0 metrics:nil views:@{@"view": self.emptyView}]];
+}
+
++ (NSString *)detailViewTitle {
+    return @"KDIEmptyView";
 }
 
 @end

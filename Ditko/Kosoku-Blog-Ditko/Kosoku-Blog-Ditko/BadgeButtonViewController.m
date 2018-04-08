@@ -19,22 +19,21 @@
 
 #import <KSOFontAwesomeExtensions/KSOFontAwesomeExtensions.h>
 #import <Ditko/Ditko.h>
+#import <Stanley/Stanley.h>
 
 @interface BadgeButtonViewController ()
-
+@property (weak,nonatomic) IBOutlet KDIBadgeButton *badgeButton;
 @end
 
 @implementation BadgeButtonViewController
 
 - (NSString *)title {
-    return @"KDIBadgeButton";
+    return [self.class detailViewTitle];
 }
 
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if (!(self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]))
         return nil;
-    
-    self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Badge Button" image:[UIImage KSO_fontAwesomeSolidImageWithString:@"\uf0a3" size:kBarButtonItemImageSize].KDI_templateImage selectedImage:nil];
     
     self.navigationItem.rightBarButtonItems = @[[UIBarButtonItem KSO_badgeButtonBarButtonItem]];
     
@@ -44,7 +43,28 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = UIColor.whiteColor;
+    kstWeakify(self);
+    void(^block)(void) = ^{
+        kstStrongify(self);
+        self.badgeButton.badgeView.badge = [NSNumberFormatter localizedStringFromNumber:@(arc4random_uniform(999)) numberStyle:NSNumberFormatterDecimalStyle];
+    };
+    
+    self.badgeButton.badgePosition = KDIBadgeButtonBadgePositionRelativeToImage;
+    self.badgeButton.button.imageContentVerticalAlignment = KDIButtonContentVerticalAlignmentTop;
+    self.badgeButton.button.imageContentHorizontalAlignment = KDIButtonContentHorizontalAlignmentCenter;
+    self.badgeButton.button.titleContentVerticalAlignment = KDIButtonContentVerticalAlignmentBottom;
+    self.badgeButton.button.titleContentHorizontalAlignment = KDIButtonContentHorizontalAlignmentCenter;
+    [self.badgeButton.button setImage:[UIImage KSO_fontAwesomeSolidImageWithString:@"\uf2b9" size:kBarButtonItemImageSize].KDI_templateImage forState:UIControlStateNormal];
+    [self.badgeButton.button setTitle:@"Badge Button!" forState:UIControlStateNormal];
+    [self.badgeButton.button KDI_addBlock:^(__kindof UIControl * _Nonnull control, UIControlEvents controlEvents) {
+        block();
+    } forControlEvents:UIControlEventTouchUpInside];
+    
+    block();
+}
+
++ (NSString *)detailViewTitle {
+    return @"KDIBadgeButton";
 }
 
 @end

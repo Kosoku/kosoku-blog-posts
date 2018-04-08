@@ -17,7 +17,6 @@
 #import "Constants.h"
 #import "UIBarButtonItem+Extensions.h"
 
-#import <KSOFontAwesomeExtensions/KSOFontAwesomeExtensions.h>
 #import <Ditko/Ditko.h>
 
 @interface WindowViewController ()
@@ -27,14 +26,12 @@
 @implementation WindowViewController
 
 - (NSString *)title {
-    return @"KDIWindow";
+    return [self.class detailViewTitle];
 }
 
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if (!(self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]))
         return nil;
-    
-    self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Window" image:[UIImage KSO_fontAwesomeSolidImageWithString:@"\uf2d0" size:kBarButtonItemImageSize].KDI_templateImage selectedImage:nil];
     
     self.navigationItem.rightBarButtonItems = @[[UIBarButtonItem KSO_toggleWindowAccessoryBarButtonItem]];
     
@@ -45,6 +42,10 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = UIColor.whiteColor;
+}
+
++ (NSString *)detailViewTitle {
+    return @"KDIWindow";
 }
 
 @end

@@ -16,7 +16,6 @@
 #import "BorderedViewController.h"
 #import "Constants.h"
 
-#import <KSOFontAwesomeExtensions/KSOFontAwesomeExtensions.h>
 #import <Ditko/Ditko.h>
 
 @interface BorderedViewController ()
@@ -26,16 +25,7 @@
 @implementation BorderedViewController
 
 - (NSString *)title {
-    return @"KDIView";
-}
-
-- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if (!(self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]))
-        return nil;
-    
-    self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Border" image:[UIImage KSO_fontAwesomeSolidImageWithString:@"\uf069" size:kBarButtonItemImageSize].KDI_templateImage selectedImage:nil];
-    
-    return self;
+    return [self.class detailViewTitle];
 }
 
 - (void)viewDidLoad {
@@ -44,6 +34,10 @@
     self.borderedView.borderOptions = KDIBorderOptionsTopAndBottom;
     self.borderedView.borderWidth = 2;
     self.borderedView.borderColor = KDIColorRandomRGB();
+}
+
++ (NSString *)detailViewTitle {
+    return @"KDIView";
 }
 
 @end

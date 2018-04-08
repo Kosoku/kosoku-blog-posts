@@ -15,11 +15,12 @@
 		07165A502079F8B400132D5F /* ButtonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07165A4E2079F8B400132D5F /* ButtonViewController.xib */; };
 		07165A532079FCAE00132D5F /* EmptyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07165A522079FCAE00132D5F /* EmptyViewController.m */; };
 		076F1FE7207A92660049F400 /* BadgeButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 076F1FE6207A92660049F400 /* BadgeButtonViewController.m */; };
+		076F1FEA207A99020049F400 /* RootTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 076F1FE9207A99020049F400 /* RootTableViewController.m */; };
+		076F1FEE207A9CC10049F400 /* BadgeButtonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 076F1FEC207A9CC10049F400 /* BadgeButtonViewController.xib */; };
 		078CE98A205C9C1C001592BA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 078CE989205C9C1C001592BA /* AppDelegate.m */; };
 		078CE992205C9C1C001592BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 078CE991205C9C1C001592BA /* Assets.xcassets */; };
 		078CE995205C9C1C001592BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 078CE993205C9C1C001592BA /* LaunchScreen.storyboard */; };
 		078CE998205C9C1C001592BA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 078CE997205C9C1C001592BA /* main.m */; };
-		07D0F519207812B800EC38F0 /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D0F518207812B800EC38F0 /* TabBarController.m */; };
 		07D0F51C2078139600EC38F0 /* BorderedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D0F51B2078139600EC38F0 /* BorderedViewController.m */; };
 		07D0F51F2078141700EC38F0 /* BorderedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07D0F51D2078141700EC38F0 /* BorderedViewController.xib */; };
 		07D0F523207817B400EC38F0 /* WindowAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D0F522207817B400EC38F0 /* WindowAccessoryView.m */; };
@@ -42,6 +43,10 @@
 		07165A522079FCAE00132D5F /* EmptyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmptyViewController.m; sourceTree = "<group>"; };
 		076F1FE5207A92660049F400 /* BadgeButtonViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BadgeButtonViewController.h; sourceTree = "<group>"; };
 		076F1FE6207A92660049F400 /* BadgeButtonViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BadgeButtonViewController.m; sourceTree = "<group>"; };
+		076F1FE8207A99020049F400 /* RootTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootTableViewController.h; sourceTree = "<group>"; };
+		076F1FE9207A99020049F400 /* RootTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootTableViewController.m; sourceTree = "<group>"; };
+		076F1FEB207A99340049F400 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		076F1FED207A9CC10049F400 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/BadgeButtonViewController.xib; sourceTree = "<group>"; };
 		078CE985205C9C1C001592BA /* Kosoku-Blog-Ditko.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kosoku-Blog-Ditko.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		078CE988205C9C1C001592BA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		078CE989205C9C1C001592BA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -49,8 +54,6 @@
 		078CE994205C9C1C001592BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		078CE996205C9C1C001592BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		078CE997205C9C1C001592BA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		07D0F517207812B800EC38F0 /* TabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
-		07D0F518207812B800EC38F0 /* TabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
 		07D0F51A2078139600EC38F0 /* BorderedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BorderedViewController.h; sourceTree = "<group>"; };
 		07D0F51B2078139600EC38F0 /* BorderedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BorderedViewController.m; sourceTree = "<group>"; };
 		07D0F51E2078141700EC38F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/BorderedViewController.xib; sourceTree = "<group>"; };
@@ -104,14 +107,16 @@
 				07165A4620796E2900132D5F /* UINavigationController+Extensions.m */,
 				078CE988205C9C1C001592BA /* AppDelegate.h */,
 				078CE989205C9C1C001592BA /* AppDelegate.m */,
-				07D0F517207812B800EC38F0 /* TabBarController.h */,
-				07D0F518207812B800EC38F0 /* TabBarController.m */,
+				076F1FEB207A99340049F400 /* DetailViewController.h */,
+				076F1FE8207A99020049F400 /* RootTableViewController.h */,
+				076F1FE9207A99020049F400 /* RootTableViewController.m */,
 				07D0F521207817B400EC38F0 /* WindowAccessoryView.h */,
 				07D0F522207817B400EC38F0 /* WindowAccessoryView.m */,
 				07165A482079716100132D5F /* WindowViewController.h */,
 				07165A492079716100132D5F /* WindowViewController.m */,
 				076F1FE5207A92660049F400 /* BadgeButtonViewController.h */,
 				076F1FE6207A92660049F400 /* BadgeButtonViewController.m */,
+				076F1FEC207A9CC10049F400 /* BadgeButtonViewController.xib */,
 				07165A512079FCAE00132D5F /* EmptyViewController.h */,
 				07165A522079FCAE00132D5F /* EmptyViewController.m */,
 				07165A4B2079F7BF00132D5F /* ButtonViewController.h */,
@@ -211,6 +216,7 @@
 			files = (
 				078CE995205C9C1C001592BA /* LaunchScreen.storyboard in Resources */,
 				07165A502079F8B400132D5F /* ButtonViewController.xib in Resources */,
+				076F1FEE207A9CC10049F400 /* BadgeButtonViewController.xib in Resources */,
 				078CE992205C9C1C001592BA /* Assets.xcassets in Resources */,
 				07165A4420796D4B00132D5F /* BadgeViewController.xib in Resources */,
 				07D0F51F2078141700EC38F0 /* BorderedViewController.xib in Resources */,
@@ -281,8 +287,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				07165A532079FCAE00132D5F /* EmptyViewController.m in Sources */,
-				07D0F519207812B800EC38F0 /* TabBarController.m in Sources */,
 				07D0F523207817B400EC38F0 /* WindowAccessoryView.m in Sources */,
+				076F1FEA207A99020049F400 /* RootTableViewController.m in Sources */,
 				07165A4120796D2900132D5F /* BadgeViewController.m in Sources */,
 				076F1FE7207A92660049F400 /* BadgeButtonViewController.m in Sources */,
 				07165A4720796E2900132D5F /* UINavigationController+Extensions.m in Sources */,
@@ -312,6 +318,14 @@
 				07165A4F2079F8B400132D5F /* Base */,
 			);
 			name = ButtonViewController.xib;
+			sourceTree = "<group>";
+		};
+		076F1FEC207A9CC10049F400 /* BadgeButtonViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				076F1FED207A9CC10049F400 /* Base */,
+			);
+			name = BadgeButtonViewController.xib;
 			sourceTree = "<group>";
 		};
 		078CE993205C9C1C001592BA /* LaunchScreen.storyboard */ = {

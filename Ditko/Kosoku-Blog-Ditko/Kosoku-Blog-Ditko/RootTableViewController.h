@@ -1,8 +1,8 @@
 //
-//  TabBarController.h
+//  RootTableViewController.h
 //  Kosoku-Blog-Ditko
 //
-//  Created by William Towe on 4/6/18.
+//  Created by William Towe on 4/8/18.
 //  Copyright © 2018 Kosoku Interactive, LLC. All rights reserved.
 //
 //  Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
@@ -15,6 +15,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TabBarController : UITabBarController
+@interface RootTableViewController : UITableViewController
 
 @end

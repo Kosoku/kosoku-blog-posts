@@ -26,16 +26,7 @@
 @implementation BadgeViewController
 
 - (NSString *)title {
-    return @"KDIBadgeView";
-}
-
-- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if (!(self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]))
-        return nil;
-    
-    self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Badge" image:[UIImage KSO_fontAwesomeSolidImageWithString:@"\uf0a3" size:kBarButtonItemImageSize].KDI_templateImage selectedImage:nil];
-    
-    return self;
+    return [self.class detailViewTitle];
 }
 
 - (void)viewDidLoad {
@@ -44,6 +35,10 @@
     self.badgeView.badgeForegroundColor = UIColor.whiteColor;
     self.badgeView.badgeBackgroundColor = UIColor.redColor;
     self.badgeView.badge = @"Badged!";
+}
+
++ (NSString *)detailViewTitle {
+    return @"KDIBadgeView";
 }
 
 @end

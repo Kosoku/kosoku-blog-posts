@@ -1,5 +1,5 @@
 //
-//  ButtonViewController.m
+//  DetailViewController.h
 //  Kosoku-Blog-Ditko
 //
 //  Created by William Towe on 4/8/18.
@@ -13,34 +13,9 @@
 //
 //  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#import "ButtonViewController.h"
-#import "Constants.h"
+#import <Foundation/Foundation.h>
 
-#import <KSOFontAwesomeExtensions/KSOFontAwesomeExtensions.h>
-#import <Ditko/Ditko.h>
-
-@interface ButtonViewController ()
-@property (weak,nonatomic) IBOutlet KDIButton *button;
-@end
-
-@implementation ButtonViewController
-
-- (NSString *)title {
-    return [self.class detailViewTitle];
-}
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    self.button.titleContentVerticalAlignment = KDIButtonContentVerticalAlignmentBottom;
-    self.button.titleContentHorizontalAlignment = KDIButtonContentHorizontalAlignmentCenter;
-    self.button.imageContentVerticalAlignment = KDIButtonContentVerticalAlignmentTop;
-    self.button.imageContentHorizontalAlignment = KDIButtonContentHorizontalAlignmentCenter;
-    [self.button setImage:[UIImage KSO_fontAwesomeSolidImageWithString:@"\uf03e" size:kBarButtonItemImageSize].KDI_templateImage forState:UIControlStateNormal];
-}
-
-+ (NSString *)detailViewTitle {
-    return @"KDIButton";
-}
-
+@protocol DetailViewController <NSObject>
+@required
++ (NSString *)detailViewTitle;
 @end
