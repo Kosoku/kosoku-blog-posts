@@ -46,3 +46,26 @@ view.badge = @"Badged!";
 You get something that looks like this:
 
 <img src="KDIBadgeView.png" alt="KDIBadgeView example" style="width: 320px;"/>
+
+### KDIButton
+
+*KDIButton.h* is a `UIButton` subclass that provides a variety of additional methods, including setting different alignments for image and title. For example, you could set image to be top alignment and centered horizontally, while setting the title to be bottom aligned and centered horizontally. Something like this:
+
+```objc
+#import <Ditko/Ditko.h>
+
+KDIButton *button = [KDIButton buttonWithType:UIButtonTypeSystem];
+// assume this exists
+UIImage *image = ...;
+
+button.titleContentVerticalAlignment = KDIButtonContentVerticalAlignmentBottom;
+button.titleContentHorizontalAlignment = KDIButtonContentHorizontalAlignmentCenter;
+button.imageContentVerticalAlignment = KDIButtonContentVerticalAlignmentTop;
+button.imageContentHorizontalAlignment = KDIButtonContentHorizontalAlignmentCenter;
+[button setImage:image forState:UIControlStateNormal];
+[button setTitle:@"Title" forState:UIControlStateNormal];
+```
+
+You get a button that looks like this:
+
+<img src="KDIButton.png" alt="KDIButton example" style="width: 320px;"/>
