@@ -68,6 +68,31 @@ You get a button that looks like this:
 
 <img src="KDIButton.png" alt="KDIButton example" style="width: 320px;"/>
 
+## KDIBadgeButton
+
+*KDIBadgeButton.h* is a `UIView` subclass that manages an instance of `KDIButton` and `KDIBadgeView` to allow for badging of system elements similar to `UITabBarItem`. For example:
+
+```objc
+#import <Ditko/Ditko.h>
+
+KDIBadgeButton *badgeButton = [[KDIBadgeButton alloc] initWithFrame:CGRectZero];
+// assume this exists
+UIImage *image = ...;
+
+badgeButton.badgePosition = KDIBadgeButtonBadgePositionRelativeToImage;
+badgeButton.badgeView.badge = @"64";
+badgeButton.button.imageContentVerticalAlignment = KDIButtonContentVerticalAlignmentTop;
+badgeButton.button.imageContentHorizontalAlignment = KDIButtonContentHorizontalAlignmentCenter;
+badgeButton.button.titleContentVerticalAlignment = KDIButtonContentVerticalAlignmentBottom;
+badgeButton.button.titleContentHorizontalAlignment = KDIButtonContentHorizontalAlignmentCenter;
+[badgeButton.button setImage:image forState:UIControlStateNormal];
+[badgeButton.button setTitle:@"Badge Button!" forState:UIControlStateNormal];
+```
+
+You would get a view that looks like this:
+
+<img src="KDIBadgeButton.png" alt="KDIBadgeButton example" style="width: 320px;"/>
+
 ## KDIEmptyView
 
 *KDIEmptyView.h* is a `UIView` subclass that can be used to provide information to the user when content for a view is empty or unavailable. For example, you want to show the user's photos but require their permission first, this view could prompt the user to approve the system permission alert or prompt them to approve the permission in Settings if it was denied the first time. Sensible defaults are provided for font, color and spacing. For example:
