@@ -113,3 +113,23 @@ view.action = @"Toggle activity indicator";
 You get a view that looks like this:
 
 <img src="KDIEmptyView.png" alt="KDIEmptyView example" style="width: 320px;"/>
+
+## KDIGradientView
+
+*KDIGradientView.h* is a `UIView` subclass that uses `CAGradientLayer` as its backing layer to draw a gradient. For example:
+
+```objc
+#import <Ditko/Ditko.h>
+
+KDIGradientView *gradientView = [[KDIGradientView alloc] initWithFrame:CGRectZero];
+
+gradientView.colors = @[KDIColorRandomHSB(),
+                             KDIColorRandomHSB(),
+                             KDIColorRandomHSB()];
+gradientView.startPoint = CGPointMake(0, 0);
+gradientView.endPoint = CGPointMake(1, 1);
+```
+
+You get a view that looks like this:
+
+<img src="KDIGradientView.png" alt="KDIGradientView example" style="width: 320px;"/>

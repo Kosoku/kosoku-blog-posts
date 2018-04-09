@@ -21,6 +21,7 @@
 #import "ButtonViewController.h"
 #import "BadgeViewController.h"
 #import "BorderedViewController.h"
+#import "GradientViewController.h"
 
 @interface RootTableViewController ()
 @property (copy,nonatomic) NSArray<Class<DetailViewController>> *detailViewClasses;
@@ -41,7 +42,8 @@
                                EmptyViewController.class,
                                ButtonViewController.class,
                                BadgeViewController.class,
-                               BorderedViewController.class];
+                               BorderedViewController.class,
+                               GradientViewController.class];
     
     return self;
 }

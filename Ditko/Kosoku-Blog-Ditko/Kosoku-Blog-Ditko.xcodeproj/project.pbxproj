@@ -14,6 +14,8 @@
 		07165A4D2079F7BF00132D5F /* ButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07165A4C2079F7BF00132D5F /* ButtonViewController.m */; };
 		07165A502079F8B400132D5F /* ButtonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07165A4E2079F8B400132D5F /* ButtonViewController.xib */; };
 		07165A532079FCAE00132D5F /* EmptyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07165A522079FCAE00132D5F /* EmptyViewController.m */; };
+		0733393C207B92320080B390 /* GradientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0733393B207B92320080B390 /* GradientViewController.m */; };
+		0733393F207B93BB0080B390 /* GradientViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0733393D207B93BB0080B390 /* GradientViewController.xib */; };
 		076F1FE7207A92660049F400 /* BadgeButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 076F1FE6207A92660049F400 /* BadgeButtonViewController.m */; };
 		076F1FEA207A99020049F400 /* RootTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 076F1FE9207A99020049F400 /* RootTableViewController.m */; };
 		076F1FEE207A9CC10049F400 /* BadgeButtonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 076F1FEC207A9CC10049F400 /* BadgeButtonViewController.xib */; };
@@ -41,6 +43,9 @@
 		07165A4F2079F8B400132D5F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ButtonViewController.xib; sourceTree = "<group>"; };
 		07165A512079FCAE00132D5F /* EmptyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmptyViewController.h; sourceTree = "<group>"; };
 		07165A522079FCAE00132D5F /* EmptyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmptyViewController.m; sourceTree = "<group>"; };
+		0733393A207B92320080B390 /* GradientViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GradientViewController.h; sourceTree = "<group>"; };
+		0733393B207B92320080B390 /* GradientViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GradientViewController.m; sourceTree = "<group>"; };
+		0733393E207B93BB0080B390 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/GradientViewController.xib; sourceTree = "<group>"; };
 		076F1FE5207A92660049F400 /* BadgeButtonViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BadgeButtonViewController.h; sourceTree = "<group>"; };
 		076F1FE6207A92660049F400 /* BadgeButtonViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BadgeButtonViewController.m; sourceTree = "<group>"; };
 		076F1FE8207A99020049F400 /* RootTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootTableViewController.h; sourceTree = "<group>"; };
@@ -114,6 +119,9 @@
 				07D0F522207817B400EC38F0 /* WindowAccessoryView.m */,
 				07165A482079716100132D5F /* WindowViewController.h */,
 				07165A492079716100132D5F /* WindowViewController.m */,
+				0733393A207B92320080B390 /* GradientViewController.h */,
+				0733393B207B92320080B390 /* GradientViewController.m */,
+				0733393D207B93BB0080B390 /* GradientViewController.xib */,
 				076F1FE5207A92660049F400 /* BadgeButtonViewController.h */,
 				076F1FE6207A92660049F400 /* BadgeButtonViewController.m */,
 				076F1FEC207A9CC10049F400 /* BadgeButtonViewController.xib */,
@@ -217,6 +225,7 @@
 				078CE995205C9C1C001592BA /* LaunchScreen.storyboard in Resources */,
 				07165A502079F8B400132D5F /* ButtonViewController.xib in Resources */,
 				076F1FEE207A9CC10049F400 /* BadgeButtonViewController.xib in Resources */,
+				0733393F207B93BB0080B390 /* GradientViewController.xib in Resources */,
 				078CE992205C9C1C001592BA /* Assets.xcassets in Resources */,
 				07165A4420796D4B00132D5F /* BadgeViewController.xib in Resources */,
 				07D0F51F2078141700EC38F0 /* BorderedViewController.xib in Resources */,
@@ -298,6 +307,7 @@
 				078CE98A205C9C1C001592BA /* AppDelegate.m in Sources */,
 				07165A4D2079F7BF00132D5F /* ButtonViewController.m in Sources */,
 				07165A4A2079716100132D5F /* WindowViewController.m in Sources */,
+				0733393C207B92320080B390 /* GradientViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,6 +328,14 @@
 				07165A4F2079F8B400132D5F /* Base */,
 			);
 			name = ButtonViewController.xib;
+			sourceTree = "<group>";
+		};
+		0733393D207B93BB0080B390 /* GradientViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0733393E207B93BB0080B390 /* Base */,
+			);
+			name = GradientViewController.xib;
 			sourceTree = "<group>";
 		};
 		076F1FEC207A9CC10049F400 /* BadgeButtonViewController.xib */ = {
