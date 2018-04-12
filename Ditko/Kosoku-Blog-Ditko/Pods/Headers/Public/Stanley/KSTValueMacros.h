@@ -1,1 +1,0 @@
-../../../Stanley/Stanley/KSTValueMacros.h

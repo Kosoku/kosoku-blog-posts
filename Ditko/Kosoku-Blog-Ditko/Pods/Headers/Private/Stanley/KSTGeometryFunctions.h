@@ -1,1 +1,0 @@
-../../../Stanley/Stanley/KSTGeometryFunctions.h

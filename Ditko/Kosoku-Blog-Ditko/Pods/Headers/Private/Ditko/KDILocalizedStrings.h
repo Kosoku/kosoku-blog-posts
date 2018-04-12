@@ -1,1 +1,0 @@
-../../../Ditko/Ditko/Private/KDILocalizedStrings.h
